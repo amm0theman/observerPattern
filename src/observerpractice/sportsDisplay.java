@@ -13,14 +13,17 @@ public class sportsDisplay implements observer {
     
     resultsForm currentResults;
     
+    @Override
     public void update(subject updatedSubject) {
         matchResults castedObject = (matchResults)updatedSubject;
         currentResults = castedObject.GetState();
     }
     
+    public void update(matchResults updatedSubject) {
+        currentResults = updatedSubject.GetState();
+    }
+    
     public void display() {
-        System.out.println("The result of match 1 was " + currentResults.getMatch1() + ".");
-        System.out.println("The result of match 2 was " + currentResults.getMatch2() + ".");
-        System.out.println("The result of match 3 was " + currentResults.getMatch3() + ".");
+        System.out.println("The result of the most recent match was " + currentResults.getMatch1() + ".");
     }
 }

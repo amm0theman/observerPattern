@@ -11,25 +11,13 @@ import java.util.Random;
  */
 public class resultsForm {
     int match1Result;
-    int match2Result;
-    int match3Result;
     
     resultsForm() {
         Random rand = new Random();
         match1Result = rand.nextInt(10);
-        match2Result = rand.nextInt(10);
-        match3Result = rand.nextInt(10);
     }
     
     public int getMatch1() {
         return match1Result;
-    }
-    
-    public int getMatch2() {
-        return match2Result;
-    }
-    
-    public int getMatch3() {
-        return match3Result;
     }
 }

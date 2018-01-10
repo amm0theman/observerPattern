@@ -15,15 +15,20 @@ public class ObserverPractice {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        subject threeGames = new matchResults();
+        matchResults threeGames = new matchResults();
         averageDisplay display1 = new averageDisplay();
         sportsDisplay display2 = new sportsDisplay();
         
         threeGames.attachObserver(display1);
         threeGames.attachObserver(display2);
         threeGames.notifyObserver();
-        display1.display();
-        display2.display();
+        
+        for (int i = 0; i < 10; i++){
+            threeGames.SetState();
+            display1.display();
+            display2.display();
+            threeGames.notifyObserver();
+        }
     }
     
 }
